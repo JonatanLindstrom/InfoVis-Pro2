@@ -1,0 +1,43 @@
+/* HTML, Body */
+html {
+    background-image: linear-gradient(to right, #394450, #485563);
+}
+body {
+    background-image: linear-gradient(to bottom right, #29323c, #485563);
+}
+
+
+/* Intro overlay */
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(2,2,2,0.85);
+    z-index: 2;
+    cursor: pointer;
+    text-align: center;
+    color: #f8f9fa;
+}
+@media (max-width: 576px) {
+    #overlay h1 {
+        padding-top: 50px !important;
+    }
+    #overlay p {
+        padding-top: 40px !important;
+        padding-left: 10% !important;
+        padding-right: 10% !important;
+    }
+}
+#overlay h1 {
+    padding-top: 250px;
+}
+#overlay p {
+    padding-top: 50px;
+    padding-left: 20%;
+    padding-right: 20%;
+}
