@@ -6,11 +6,17 @@ body {
     background-image: linear-gradient(to bottom right, #29323c, #485563);
 }
 
+/* Nav */
+.nav-label {
+    color: #ddd;
+}
+
 
 /* Map */
 .datamaps-hoverover {
     margin: 10px;
 }
+
 
 /* Intro overlay */
 #overlay {
