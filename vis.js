@@ -5,8 +5,6 @@ var loadData = d3.csv('Data/W1/Feeling_of_happiness.csv', dataset => {
         val.key = d.key;
         return val;
     })
-    return data;
-})
 
 
 // Create map module
@@ -16,7 +14,7 @@ var map = new Datamap({
     projection: 'mercator',
     height: 500,
     fills: {
-      defaultFill: '#f0af0a',
+      defaultFill: '#eee',
       lt50: 'rgba(0,244,244,0.9)',
       gt50: 'red'
     },
@@ -29,8 +27,7 @@ var map = new Datamap({
       }
 })
 
-console.log(loadData)
-    // map.data(data)
+console.log(data)
 
 
 // Shows the intro to the website
@@ -45,4 +42,5 @@ var intro = d3.select('#overlay')
 
 
 
+})
 
