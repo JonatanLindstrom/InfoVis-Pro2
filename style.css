@@ -7,6 +7,11 @@ body {
 }
 
 
+/* Map */
+.datamaps-hoverover {
+    margin: 10px;
+}
+
 /* Intro overlay */
 #overlay {
     position: fixed;
