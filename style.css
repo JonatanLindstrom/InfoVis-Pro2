@@ -17,6 +17,7 @@ body {
 /* Map */
 .datamaps-hoverover {
     margin: 10px;
+    color: #333;
 }
 
 
@@ -47,7 +48,7 @@ body {
     }
 }
 #overlay h1 {
-    padding-top: 250px;
+    padding-top: 200px;
 }
 #overlay p {
     padding-top: 50px;
