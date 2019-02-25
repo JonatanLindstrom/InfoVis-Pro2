@@ -52,7 +52,7 @@ d3.csv('Data/W5/happiness.csv', dataset => {
         done: function(datamap) {
             datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
                 country.text(geography.properties.name);
-                console.log(dataObj[geography.id])
+                countryData.html('');
                 countryData.html(`  Very happy: ${dataObj[geography.id].happiness}%<br/>
                                     Quite happy: ${dataObj[geography.id].quitehappiness}%<br/>
                                     Not very happy: ${dataObj[geography.id].nothappiness}%<br/>
