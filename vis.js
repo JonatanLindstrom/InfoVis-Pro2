@@ -9,13 +9,22 @@ d3.csv('Data/W5/happiness.csv', dataset => {
             for (var i = 0, j = countries.length; i < j; i++) {
                 if (key == countries[i].properties.name) {
                     currentID = countries[i].id;
-                    console.log(d.value[''], key, d.value[key])
                     if (d.value[''] == 'Very happy') {
-                        if (d.value[key] > 60) dataObj[currentID] = { "fillKey": "HIGHEST" }
-                        if (d.value[key] > 45 && d.value[key] < 60) dataObj[currentID] = { "fillKey": "HIGH" }
-                        if (d.value[key] > 30 && d.value[key] < 45) dataObj[currentID] = { "fillKey": "MEDIUM" }
-                        if (d.value[key] > 15 && d.value[key] < 30) dataObj[currentID] = { "fillKey": "LOW" }
-                        if (d.value[key] < 15) dataObj[currentID] = { "fillKey": "LOWEST" }
+                        if (d.value[key] > 40) dataObj[currentID] = { "fillKey": "HIGHEST" }
+                        if (d.value[key] > 30 && d.value[key] < 40) dataObj[currentID] = { "fillKey": "HIGH" }
+                        if (d.value[key] > 20 && d.value[key] < 30) dataObj[currentID] = { "fillKey": "MEDIUM" }
+                        if (d.value[key] > 10 && d.value[key] < 20) dataObj[currentID] = { "fillKey": "LOW" }
+                        if (d.value[key] < 10) dataObj[currentID] = { "fillKey": "LOWEST" }
+                        dataObj[currentID].happiness = d.value[key];
+                    }
+                    else if (d.value[''] == 'Quite happy') {
+                        dataObj[currentID].quitehappiness = d.value[key];
+                    }
+                    else if (d.value[''] == 'Not very happy') {
+                        dataObj[currentID].nothappiness = d.value[key];
+                    }
+                    else if (d.value[''] == 'Not at all happy') {
+                        dataObj[currentID].notatallhappiness = d.value[key];
                     }
                 }
             }
@@ -43,6 +52,11 @@ d3.csv('Data/W5/happiness.csv', dataset => {
         done: function(datamap) {
             datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
                 country.text(geography.properties.name);
+                console.log(dataObj[geography.id])
+                countryData.html(`  Very happy: ${dataObj[geography.id].happiness}%<br/>
+                                    Quite happy: ${dataObj[geography.id].quitehappiness}%<br/>
+                                    Not very happy: ${dataObj[geography.id].nothappiness}%<br/>
+                                    Not at all happy: ${dataObj[geography.id].notatallhappiness}%`);
             });
         }
     })
@@ -54,6 +68,8 @@ d3.csv('Data/W5/happiness.csv', dataset => {
         legendsConainer.style('text-align', 'center')
         
     var country = legendsConainer.append('h1')
+
+    var countryData = legendsConainer.append('p')
 
 
 
