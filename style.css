@@ -1,9 +1,11 @@
 /* HTML, Body */
 html {
     background-image: linear-gradient(to right, #394450, #485563);
+    color: #ddd;
 }
 body {
     background-image: linear-gradient(to bottom right, #29323c, #485563);
+    color: #ddd;
 }
 
 /* Nav */
@@ -51,4 +53,17 @@ body {
     padding-top: 50px;
     padding-left: 20%;
     padding-right: 20%;
+}
+
+
+/* Images */
+img {
+    border: solid 1px;
+    width: 18%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.differs {
+    opacity: 0.8;
 }

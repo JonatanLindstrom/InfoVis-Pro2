@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+
+        <title>Project 2: Discovery process</title>
+    </head>
+
+    <body>
+        <div id="overlay"></div>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Project 2: World Values</a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">D3 Attempt</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="container-fluid">
+            <h1 style="text-align: center;">Does acceptance bring happiness?</h1>
+            <p>As the common hippie-related phrase "peace, love and understanding" goes, this discovery process is aimed towards
+                looking into how the <i>understanding</i> part has developed over the years and how it affects happiness. From the data 
+                provided by WVS (displayed in heatmaps below) it can be seen how the acceptance of others and happiness correlates.
+                <br/><br/>
+                It can be seen that the overall happiness has been stable or improved for most countries. When looking at this compared 
+                to various questions in how justifiable or acceptable certain actions or feelings are, it gives a sense for how 
+                open-minded the respondents are in general. Even though some of these actions may not be <i>good</i> per se (e.g. suicide)
+                a tolerant view about it being justifiable still gives a measurement to how open-minded the responants were.
+                <br/><br/>
+                From the data I conclude that as the understanding of others improve over time, so does the happiness of all. 
+                While this correlation in general seems to be true, it may not be true when it comes to money as the 
+                "avoiding fare on public transport" is the one action which didn't get improved acceptance.
+            </p>
+            <div class="row" style="padding-top: 50px;">
+                <div style="width:100%; text-align: center;">
+                    <h2>Happiness over the years</h2>
+                </div>
+                <div style="width:20%; text-align: center;"><h3>1981-1984</h3></div>
+                <div style="width:20%; text-align: center;"><h3>1990-1994</h3></div>
+                <div style="width:20%; text-align: center;"><h3>1995-1999</h3></div>
+                <div style="width:20%; text-align: center;"><h3>2000-2004</h3></div>
+                <div style="width:20%; text-align: center;"><h3>2005-2009</h3></div>
+            </div>
+            <div class="row">
+                <img src="Images/happy-w1.png">
+                <img src="Images/happy-w2.png">
+                <img src="Images/happy-w3.png">
+                <img src="Images/happy-w4.png">
+                <img src="Images/happy-w5.png">
+            </div>
+            <div class="row" style="padding-top: 50px;">
+                <div style="width:100%; text-align: center;">
+                    <h2>Acceptance over the years</h2>
+                    <p>Notice that the scale range varies. Don't look solely at the colors.</p>
+                </div>
+                <div style="width:20%; text-align: center;"><h3>1981-1984</h3></div>
+                <div style="width:20%; text-align: center;"><h3>1990-1994</h3></div>
+                <div style="width:20%; text-align: center;"><h3>1995-1999</h3></div>
+                <div style="width:20%; text-align: center;"><h3>2000-2004</h3></div>
+                <div style="width:20%; text-align: center;"><h3>2005-2009</h3></div>
+            </div>
+            <div class="row">
+                <img src="Images/ticketless-w1.png">
+                <img src="Images/ticketless-w2.png">
+                <img src="Images/ticketless-w3.png">
+                <img src="Images/ticketless-w4.png">
+                <img src="Images/ticketless-w5.png">
+            </div>
+            <div class="row">
+                <img src="Images/homo-w1.png">
+                <img src="Images/homo-w2.png">
+                <img src="Images/homo-w3.png">
+                <img src="Images/homo-w4.png">
+                <img src="Images/homo-w5.png">
+            </div>
+            <div class="row">
+                <img src="Images/abort-w1.png">
+                <img src="Images/abort-w2.png">
+                <img src="Images/abort-w3.png">
+                <img src="Images/abort-w4.png">
+                <img src="Images/abort-w5.png">
+            </div>
+            <div class="row">
+                <img src="Images/divorce-w1.png">
+                <img src="Images/divorce-w2.png">
+                <img src="Images/divorce-w3.png">
+                <img src="Images/divorce-w4.png">
+                <img src="Images/divorce-w5.png">
+            </div>
+            <div class="row">
+                <img src="Images/suicide-w1.png">
+                <img src="Images/suicide-w2.png">
+                <img src="Images/suicide-w3.png">
+                <img src="Images/suicide-w4.png">
+                <img src="Images/suicide-w5.png">
+            </div>
+            <div class="row">
+                <img src="Images/euthanasia-w1.png">
+                <img src="Images/euthanasia-w2.png">
+                <img src="Images/no-data.png" class="differs">
+                <img src="Images/euthanasia-w4.png">
+                <img src="Images/euthanasia-w5.png">
+            </div>
+            <div class="row">
+                <img src="Images/singleparent-w1.png">
+                <img src="Images/singleparent-w2.png">
+                <img src="Images/singleparent-w3.png">
+                <img src="Images/singleparent-w4.png">
+                <img src="Images/singleparent-w5.png">
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    </body>
+</html>

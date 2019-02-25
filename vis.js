@@ -1,37 +1,67 @@
-Promise.all([
-    d3.csv('Data/W1/happiness.csv'),
-    d3.csv('Data/W2/happiness.csv'),
-    d3.csv('Data/W3/happiness.csv'),
-    d3.csv('Data/W4/happiness.csv'),
-    d3.csv('Data/W5/happiness.csv'),
-    d3.csv('Data/W6/happiness.csv'),
-]).then(function(dataset) {
+d3.csv('Data/W1/happiness.csv', dataset => {
 
-    // var data = d3.entries(dataset).map(d => {
-    //     var val = d.value;
-    //     val.key = d.key;
-    //     return val;
-    // })
+    var data = d3.entries(dataset).map(d => {
+        var val = d.value;
+        val.key = d.key;
+        return val;
+    })
 
     // Create map module
-    var map = new Datamap({
+    var worldmap = new Datamap({
         scope: 'world',
         element: document.getElementById('mapContainer'),
         projection: 'mercator',
         height: 500,
         fills: {
-        defaultFill: '#aaa',
-        lt50: 'rgba(0,244,244,0.9)',
-        gt50: 'red'
+            defaultFill: '#aaa',
+            HIGHEST: '#00FF00',
+            HIGH: '#B0FF00',
+            MEDIUM: '#FFFF00',
+            LOW: '#FF8C00',
+            LOWEST: '#FF0000'
         },
 
         data: {
-            USA: {fillKey: 'lt50' },
-            RUS: {fillKey: 'lt50' },
-            ARG: {fillKey: 'gt50'},
-            COL: {fillKey: 'gt50' }     
+            
+            USA: {fillKey: 'HIGHEST' },
+            SWE: {fillKey: 'LOWEST' },
+            RUS: {fillKey: 'HIGH' },
+            ARG: {fillKey: 'MEDIUM'},
+            COL: {fillKey: 'LOW' }     
+        },
+
+        done: function(datamap) {
+            datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
+                country.text(geography.properties.name);
+            });
         }
     })
+
+    var countries = Datamap.prototype.worldTopo.objects.world.geometries;
+    for (var i = 0, j = countries.length; i < j; i++) {
+        // console.log(countries[i]);
+    }
+
+
+    d3.entries(data).map(d => {
+        for (key in d.value) { 
+            for (var i = 0, j = countries.length; i < j; i++) {
+                if (key == countries[i].properties.name) {
+                    currentID = countries[i].id;
+                    worldmap.updateChoropleth({
+                        currentID: {fillKey: 'LOW'}
+                    });
+                }
+            }
+        }
+    });
+    
+
+    // Legends
+    var legendsConainer = d3.select('#mapLegends')
+        legendsConainer.style('text-align', 'center')
+        
+    var country = legendsConainer.append('h1')
 
 
 
